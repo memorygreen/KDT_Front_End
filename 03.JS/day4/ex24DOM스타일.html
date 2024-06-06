@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1Tag">떡볶이에 당면추가</h1>
+    <button id="btn">다크모드</button>
+
+    <script>
+        // Element의 스타일을 변경해보자.
+        // HTML요소.style.속성 = "바꿀 값"
+
+        document.getElementById('btn').addEventListener('click',(e)=>{
+            
+            //console.log(e.target); //<button id="btn">다크모드</button>
+            console.log(e.target.innerText); //다크모드
+            
+            // 1. 스타일을 바꿔줄 대상 요소를 가져온다.
+            let h1Tag = document.getElementById("h1Tag");
+            
+            // 2. 내가 가져온 요소의 style을 확인해보자.
+            console.log(h1Tag.style);
+
+            // 3. 내가 원하는 스타일로 변경
+            h1Tag.style.color = "white";
+            
+            // +) body 태그의 배경색을 black으로 변경해줄 것
+                //자:유사배열 사용
+            
+            //쌤풀이
+            let body = document.getElementsByTagName('body')[0];
+            body.style.background = 'black';
+
+            // 자영풀이
+            /*
+            let body = document.getElementsByTagName('body')[0];
+            console.log(body.style);
+            body.style.backgroundColor = 'black';
+            */
+
+
+            //자:조건문
+                if(e.target.innerText === "다크모드"){
+                    h1Tag.style.color = "white";
+                    body.style.backgroundColor = 'black';
+                    e.target.innerText = "라이트 모드";
+                }else{
+                    //document.getElementById.h1Tag.style.color = "black";
+                    //document.getElementsByName('body')[0].style.background = "white";
+                    h1Tag.style.color = "black";
+                    body.style.backgroundColor = 'white';
+                    e.target.innerText = "다크모드";
+
+                }
+
+
+
+
+
+
+        })
+    </script>
+
+</body>
+</html>

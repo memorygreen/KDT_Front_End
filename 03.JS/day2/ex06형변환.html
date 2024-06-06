@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 형변환 
+        // (1) 숫자로
+
+        // a. 정수로 형변환 : parseInt()
+        let textFloat = '3.14';
+        let num1 = parseInt(textFloat);
+        console.log('정수로', num1);
+
+        // b. 실수로 형변환 : parseFloat()
+        let num2 = parseFloat(textFloat);
+        console.log('실수로', num2);
+
+        // c. 숫자로 형변환 : Number()
+        let num3 = Number(textFloat);
+        console.log('숫자로', num3);
+
+        // (2) 문자로
+
+        let number = 56;
+        console.log(number+"");
+        console.log(String(number));
+        console.log(number.toString());
+        console.log(number.toString(2));
+
+
+        // ========================================
+        // STEP 1. 사용자에게 숫자 하나를 입력받는다.
+        // STEP 2. 사용자에게 두번째 숫자를 입력받는다.
+        // STEP 3. 두 개의 숫자를 더한 결과와, 뺀 결과를 alert로 출력한다.
+        //      ex) 100과 200에 대한 결과 값은 300, -100 입니다.
+        //      (단, alert 창에서는 , 로 문자를 더할 수 없다.)
+
+        // 자영풀이
+        let n1 = Number(prompt("첫번째 숫자를 입력하세요."));
+        let n2 = Number(prompt("두번째 숫자를 입력하세요."));
+        
+        // 자: `` 백킥 연산이 제일 편한듯 
+        alert(`${n1}과 ${n2}에 대한 결과 값은 ${n1+n2}, ${n1-n2}입니다.`);
+
+        //자: + 로 출력하면 숫자 연산을 우선 시 하기 위해 숫자에 괄호해줘야함
+        <!-- alert(n1+"과 "+n2+"에 대한 결과 값은 " + (n1+n2) + ", "+ (n1-n2) +"입니다.");
+        <!-- alert((n1)+"과 "+(n2)+"에 대한 결과 값은 " + (n1+n2)+", "+(n1-n2)+"입니다."); --> -->
+        
+        // 쌤풀이
+        // STEP 1. 사용자에게 숫자 하나를 입력받는다.
+        let userNum1 = parseInt(prompt('첫번째 숫자를 입력하시오.')); 
+
+        // STEP 2. 사용자에게 두번째 숫자를 입력받는다.
+        let userNum2 = parseInt(prompt('두번째 숫자를 입력하시오.')); 
+
+        // STEP 3. 두 개의 숫자를 더한 결과와, 뺀 결과를 alert로 출력한다.
+        //      ex) 100과 200에 대한 결과 값은 300, -100 입니다.
+        //      (단, alert 창에서는 , 로 문자를 더할 수 없다.)
+
+        alert(`${userNum1}과 ${userNum2}에 대한 결과 값은 ${userNum1+userNum2}, ${userNum1-userNum2}`);
+        
+
+    </script>
+</body>
+</html>

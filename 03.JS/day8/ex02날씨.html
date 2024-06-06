@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1>오늘의 날씨는?</h1>
+    <button class="btn">Seoul</button>
+    <button class="btn">Auckland</button>
+    <button class="btn">Paris</button>
+    <div id="weatherBox"></div>
+
+    <script>
+        
+        const callCityWeather = (city)=>{
+            let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=603aa562f93c1b6e5fb4e7596aa820d5`
+
+            // Case 1. aJax
+            //$.ajax({
+            //    url : url,
+            //    type : 'get',
+            //    success : (res)=>{ console.log('success', res)}, //자:성공한 결과 res를 출력함
+            //    error : ()=>{console.log('통신실패')}
+            //});
+
+            // Case 2. Fetch
+            fetch(url)
+            .then(res => res.json()) //자: 결과를 json으로 파싱
+            .then( res=>{
+                console.log('success', res) //자:결과를 출력
+
+                // id가 weatherBox 인 공간 안에 "온도는 00도 입니다." 라고 뜨게 하기
+                // weatherOpenApi 켈빈 온도
+                // 켈빈온도 - 273 = 섭씨 온도
+                
+                //자영풀이
+                //document.getElementById('weatherBox').innerHTML = `<span>${city}의 현재 온도는 ${Math.round(Number(res.main.temp)-273)}도 입니다.</span>`
+                //console.log(Number(res.main.temp)-273)
+
+                //쌤풀이
+                console.log('success', parseInt(res.main.temp-273)) 
+                document.getElementById('weatherBox').innerHTML = `<h2>현재 온도는 ${parseInt(res.main.temp-273)}도 입니다.</h2>`
+                
+
+
+            })  
+
+
+        }
+        
+        $('.btn').click((e)=>{
+            console.log('ck', e.target.innerText);
+            callCityWeather(e.target.innerText);
+        });
+
+
+    </script>
+</body>
+</html>

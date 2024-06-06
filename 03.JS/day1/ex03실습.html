@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+            // 쌤풀이
+            
+            // 1. 사용자의 이름을 입력받아준다. ('이름을 입력하시오.')
+            let name = prompt("이름을 입력하시오.");
+
+            // 2. 사용자에게 신청곡을 입력받는다. ('신청곡을 작성해주세요.')
+            let song = prompt("신청곡을 작성해주세요.");
+
+            // 3. console창에 출력문
+            //      "XXX님이 신청하신 노래는 XXX입니다."
+
+            // 변수, 텍스트를 이어서 작성하는 방법 3가지
+            // 1) ,(쉼표)
+            console.log(name, "님이 신청하신 노래는 ", song,  "입니다.");
+
+            // 2) + (연산) //자:띄어쓰기 없이 데이터 붙게 됨
+            console.log(name+"님이 신청하신 노래는 "+song+"입니다.")
+
+            // 3) ` (백틱) ${}`
+            //자: 문장 안에 변수 입력가능(작은따옴표x tab키 위 백틱키)
+            console.log(`${name}님이 신청하신 노래는 ${song}입니다.`)
+
+            // 4. 다 되면 캡쳐해서 단톡방에 올려주기 + 주변사람 도와주기 -->
+
+            
+            <!-- 
+            // 자영풀이        
+            // 1. 사용자의 이름을 입력받아준다. ('이름을 입력하시오.')
+            var name = prompt("이름을 입력하시오.")
+            // 2. 사용자에게 신청곡을 입력받는다. ('신청곡을 작성해주세요.')
+            var song = prompt("신청곡을 작성해주세요.")
+            // 3. console창에 출력문
+            //      "XXX님이 신청하신 노래는 XXX입니다."
+            console.log(name, "님이 신청하신 노래는 ",song,  "입니다.")
+            console.log(name+"님이 신청하신 노래는 "+ song+ "입니다.")
+
+            // 4. 다 되면 캡쳐해서 단톡방에 올려주기 + 주변사람 도와주기 
+            -->
+            
+            
+            
+
+    </script>
+    
+</body>
+</html>

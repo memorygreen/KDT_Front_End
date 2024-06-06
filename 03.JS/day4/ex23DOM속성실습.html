@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name">
+    <button id="btn">변경!</button>
+    <img
+    src="#"
+    width="200px"
+    id="img_id">
+
+    <script>
+        // 쌤풀이 (2024.03.07)
+        // STEP 1. 사진 두 객의 이미지 주소를 구한다 (url1, url2)
+        let url1 = "https://static.wtable.co.kr/image/production/service/recipe/1772/509a4bbe-1fa9-448a-a487-240db9b0aba0.jpg";
+        let url2 = "https://img.siksinhot.com/story/1540699165809183.jpeg?w=307&h=300&c=Y";
+        
+        // STEP 2. '변경!' 이라는 버튼을 클릭 시, ====================================
+        document.getElementById('btn').addEventListener('click', ()=>{
+            
+            // STEP 3. 사용자가 input 태그 안에 작성한 내용을 감지 => (inputText)
+            let inputText = document.getElementById('name') //자:value 붙여도되는데 나중에 해야할 일이 있을 것 같아서 빼고 변수에 저장
+
+            // STEP 4. console창에 확인용으로 찍어줄 것
+            console.log(inputText.value);
+
+            // STEP 5. '사진1' 이라고 입력시, 사진1, '사진2' 사진2 나머지 => 잘못입력하셨습니다
+            // =========================================================================
+            
+            //자:TagName으로 가져오는 방법
+            let img = document.getElementsByTagName('img')[0];
+            if (inputText.value==="떡볶이"){
+                img.src = "https://img.siksinhot.com/story/1540699165809183.jpeg?w=307&h=300&c=Y"
+            }else if(inputText.value==='김치찜'){
+                img.src = "https://static.wtable.co.kr/image/production/service/recipe/1772/509a4bbe-1fa9-448a-a487-240db9b0aba0.jpg";
+            }else{
+                alert("잘못 입력하셨습니다.")
+            }
+
+        
+        })
+       
+        
+        
+        
+        /*
+        let url1 = "https://cloudfront-ap-northeast-1.images.arcpublishing.com/chosunbiz/IQYSLRQUZWB7OLPJPEKRJRTOV4.png";
+        let url2 = "https://biz.chosun.com/resizer/r8CSnY2aTKi5B5W_Vtg7QtvG7sE=/616x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosunbiz/MRH2F7QWYP4RKNQLGBDVWQIZ2M.png";
+        
+        
+        // 자영 풀이
+        document.getElementById("btn").addEventListener('click', ()=>{
+            console.log('클릭 함수 확인용 : '+'bnt ck') //확인용
+
+            let inputText = document.getElementById("name").value;
+            console.log('입력 내용 확인용 : '+ inputText); //확인용
+            
+            // img 태그의 id 사용한 경우
+           
+            if(inputText ==='사진1'){
+                img_tag = document.getElementById("img_id");
+                console.log('확인' + img_tag.src)
+                //img_tag.setAttribute('src', url2)
+                img_tag.src = url1;
+                img_tag;
+                console.log('사진1 입력시 조건문');//확인용
+
+            }else if(inputText==='사진2'){
+                img_tag.setAttribute('src', url2);
+            }else{
+                alert('잘못 입력하셨습니다.')
+            }
+
+            })
+            
+
+            // img 태그의 태그명 사용
+            document.getElementById("btn").addEventListener('click', ()=>{
+
+                let img_tagName = document.getElementsByTagName(Image);
+                let list =[];
+                for(let i = 0;i<img_tagName.length;i++){
+                    list[i]=img_tagName[i];
+
+                }
+                
+                console.log(img_tagName[0]);
+
+
+            })
+
+            */
+
+
+        
+
+    </script>
+</body>
+</html>

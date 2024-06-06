@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 지금부터 가위바위보를 시작합니다. 이 때, 컴퓨터는 랜덤하게 / 사용자는 선택
+
+
+        //쌤풀이
+        // 1. arr 이라는 배열 안에 '가위', '바위', '보' 라는 데이터를 할당합니다. 
+        let arr = ['가위', '바위', '보']
+        // 2. 사용자의 선택을 입력받습니다. (myChoice) 
+        //      '무엇을 내시겠습니까? (가위, 바위, 보)'
+        let myChoice = prompt('무엇을 내시겠습니까?(가위, 바위, 보)')
+
+        // 3. 컴퓨터의 선택을 세팅합니다. (comChoice)
+        //      0,1,2 라는 랜덤한 숫자를 이용해서 랜덤한 값을 추출 
+        let ranNum = parseInt(Math.random()*3);
+        let comChoice = arr[ranNum];
+
+        // 4. 나의 선택 / 컴퓨터의 선택 console 창에 
+
+        console.log('나의 선택', myChoice);
+        console.log('컴퓨터 선택', comChoice);
+
+        // 5. 가위바위보의 결과를 출력 (결과는 사용자 입장 승리, 패배, 무승부)
+        //    결과 또한 console 창에 출력 
+
+        let result = "";
+
+        if(myChoice === comChoice){
+            result = '무승부'
+
+        } else if (myChoice ==='가위'){
+            result = comChoice === '바위'? '패배' :'승리';
+        } else if (myChoice ==='바위'){
+            result = comChoice === '보'? '패배' :'승리';
+        } else if( myChoice ==='보'){
+            result = comChoice === '가위'? '패배' :'승리';
+        } else {
+            result = '게임오류! 다시 도전해주세요.'
+        }
+
+        console.log('게임 결과는', result, '입니다.');
+
+        
+        
+        
+
+
+
+
+
+        ///////// 자영 풀이/////////////
+        let arr1 = ['가위', '바위', '보'];
+
+        let myChoice1 = prompt('무엇을 내시겠습니까?(가위, 바위, 보) >> ');
+        console.log('나의 선택 :', myChoice1)
+
+        let ran1 = parseInt(Math.random()*3); //자:math가 아니라 Math, 3곱해줘야함 2가 아님!
+        console.log(ran1);
+        console.log('컴퓨터의 선택 :', arr1[ran1]);
+        
+        if(myChoice1===arr1[ran1]){
+            console.log('(무승부!!', '나의 선택 :',myChoice1,',컴퓨터의 선택 :',arr1[ran1],')')
+            alert('무승부!!')
+        }else if(myChoice1==='가위' && ran1===2){
+            console.log('나의 승리!!✌', '(나의 선택 : ✌',myChoice1,',컴퓨터의 선택 :✋',arr1[ran1],')')
+            alert('나의 승리!!✌', '나의 선택 :',myChoice1,',컴퓨터의 선택 :',arr1[ran1])
+        }else if(myChoice1==='바위' && ran1===0){
+            console.log('나의 승리!!✊', '(나의 선택 :✊',myChoice1,',컴퓨터의 선택 :✌',arr1[ran1],')')
+            alert('나의 승리!!✊', '나의 선택 :',myChoice1,',컴퓨터의 선택 :',arr1[ran1])
+        }else if(myChoice1==='보' && ran1===1){
+            console.log('나의 승리!!✋', '(나의 선택 :✋',myChoice1,',컴퓨터의 선택 :✊',arr1[ran1],')')
+            alert('나의 승리!!✋', '나의 선택 :',myChoice1,',컴퓨터의 선택 :',arr1[ran1])
+        }else {
+            console.log('패배!' , '(나의 선택 :',myChoice1,',컴퓨터의 선택 :',arr1[ran1],')')
+            alert('나의 패배!!', '나의 선택 :',myChoice1,',컴퓨터의 선택 :',arr1[ran1])
+        }
+        
+    </script>
+</body>
+</html>
